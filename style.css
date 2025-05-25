@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Time Indicator Styling */
+#time-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    font-size: 0.9em;
+}
+
+/* Main Content Styling */
+main {
+    padding-top: 70px; /* Adjust based on header height */
+}
+
+/* Section Styling */
+section {
+    min-height: 100vh;
+    padding: 40px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+section .time-period, section .date-range {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+section .life-forms-title, section .events-title {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+section .fact {
+    margin-top: 15px;
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Specific Section Backgrounds */
+#present {
+    background-color: #e6f7ff;
+}
+
+#kpg_extinction {
+    background-color: #4a4a4a;
+    color: #f0f0f0;
+}
+
+#kpg_extinction h2,
+#kpg_extinction .time-period,
+#kpg_extinction .date-range,
+#kpg_extinction .life-forms-title,
+#kpg_extinction .events-title {
+    color: #f0f0f0;
+}
+
+#kpg_extinction .fact {
+    background-color: #5a5a5a;
+    color: #f0f0f0;
+}
+
+#cambrian {
+    background-color: #f5e6cc;
+}
+
+.section-icon {
+    width: 80px; /* Or a suitable size */
+    height: 80px; /* Or a suitable size */
+    float: right;
+    margin: 0 0 15px 15px;
+    opacity: 0.7; /* Slight transparency */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.section-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Clearfix for sections containing floated icons */
+section::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Specific styling for icons on dark backgrounds if needed */
+#kpg_extinction .section-icon {
+    filter: invert(1); /* Inverts colors, making black SVGs white */
+}
+
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 2em;
+    }
+    .section-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 0 10px 10px;
+    }
+    section {
+        padding: 30px 15px;
+    }
+    #time-indicator {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+    header {
+        padding: 0.8em;
+        font-size: 0.9em;
+    }
+    main {
+        padding-top: 60px; /* Adjust if header height changes */
+    }
+}
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 1.8em;
+    }
+    .section-icon {
+        float: none; /* Stack icon above text on very small screens */
+        display: block;
+        margin: 0 auto 15px auto; /* Center it */
+        width: 70px;
+        height: 70px;
+    }
+    #time-indicator {
+        font-size: 0.7em;
+        padding: 6px 10px;
+    }
+}
